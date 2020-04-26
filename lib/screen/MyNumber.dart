@@ -1,6 +1,6 @@
-
-
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:lotte_flutter/widget/LottoNumber.dart';
 import 'package:lotte_flutter/widget/LottoNumberCombination.dart';
 
 class MyNumber extends StatefulWidget {
@@ -13,15 +13,23 @@ class MyNumber extends StatefulWidget {
 class _MyNumberState extends State<MyNumber> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Container(
-
         child: Column(
+      children: <Widget>[
+        SizedBox(height: 100),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(height: 100),
-            LottoNumberCombination([1,2,3,4,5,6]),
+            LottoNumberCombination([1, 21, 33, 45, 11, 6]),
+            Icon(
+              Icons.add,
+              color: Colors.grey,
+              size: 30.0,
+            ),
+            LottoNumber(number: 1)
           ],
         )
-    );
+      ],
+    ));
   }
 }
