@@ -17,10 +17,28 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "로또 번호 추첨기",
         home: DefaultTabController(
           length: 3,
           child: Scaffold(
+            appBar: AppBar(
+              bottom: TabBar(
+                tabs: [
+                  Tab(
+                    icon: Icon(Icons.flash_on),
+                    text: '로또 번호 뽑기',
+                  ),
+                  Tab(
+                    icon: Icon(Icons.sync),
+                    text: '뭐할까?',
+                  ),
+                  Tab(
+                    icon: Icon(Icons.storage),
+                    text: '나의 로또 번호',
+                  ),
+                ],
+              ),
+              title: Text('로또 번호 추첨기'),
+            ),
             body: TabBarView(
               physics: NeverScrollableScrollPhysics(),
               children: <Widget>[
@@ -35,7 +53,6 @@ class _MyAppState extends State<MyApp> {
                 )
               ],
             ),
-            bottomNavigationBar: BottomBar(),
           ),
         ));
   }

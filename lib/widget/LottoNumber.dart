@@ -8,11 +8,13 @@ class LottoNumber extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+    var width = screenSize.width;
     return Row(
       children: <Widget>[
         Container(
-            width: 50,
-            height: 50,
+            width: width/9,
+            height: width/9,
             child: Center(
                 child: Text(number.toString(),
                     style: TextStyle(
@@ -28,6 +30,7 @@ class LottoNumber extends StatelessWidget {
                     ))),
             decoration: BoxDecoration(
                 shape: BoxShape.circle, color: Color(getLottoNumberColor(number)))),
+            SizedBox(width: 3)
       ],
     );
   }

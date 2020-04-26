@@ -17,19 +17,31 @@ class _MyNumberState extends State<MyNumber> {
         child: Column(
       children: <Widget>[
         SizedBox(height: 100),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            LottoNumberCombination([1, 21, 33, 45, 11, 6]),
-            Icon(
-              Icons.add,
-              color: Colors.grey,
-              size: 30.0,
-            ),
-            LottoNumber(number: 1)
-          ],
-        )
+        getLottoNumberSet([1, 2, 3, 4, 5, 6], 1),
+        SizedBox(height: 20),
+        getLottoNumberSet([11, 21, 31, 35, 1, 41], 1),
+        getLottoNumberSet([12, 32, 5, 23, 45, 6], 1),
+        getLottoNumberSet([1, 2, 3, 4, 5, 6], 1),
+        getLottoNumberSet([1, 2, 3, 4, 5, 6], 1),
+        getLottoNumberSet([1, 2, 3, 4, 5, 6], 1),
+        getLottoNumberSet([1, 2, 3, 4, 5, 6], 1)
+
       ],
     ));
   }
+}
+
+Widget getLottoNumberSet(lottoNumberList, bonusNumber) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+      LottoNumberCombination(lottoNumberList),
+      Icon(
+        Icons.add,
+        color: Colors.grey,
+        size: 30.0,
+      ),
+      LottoNumber(number: bonusNumber)
+    ],
+  );
 }
