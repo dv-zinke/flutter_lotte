@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lotte_flutter/screen/MyNumber.dart';
-import 'package:lotte_flutter/widget/BottomBar.dart';
 
 void main() => runApp(MyApp());
 
@@ -43,7 +42,7 @@ class _MyAppState extends State<MyApp> {
               physics: NeverScrollableScrollPhysics(),
               children: <Widget>[
                 Container(
-                  child: Center(child: Text('page1')),
+                  child:Container(child: MyNumber()),
                 ),
                 Container(
                   child: Center(child: Text('page2')),

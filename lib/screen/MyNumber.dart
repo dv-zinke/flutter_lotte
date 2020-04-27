@@ -1,9 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:lotte_flutter/widget/LottoNumber.dart';
 import 'package:lotte_flutter/widget/LottoNumberCombination.dart';
-
+import 'package:http/http.dart' as http;
 class MyNumber extends StatefulWidget {
+
+
   @override
   State<StatefulWidget> createState() {
     return _MyNumberState();
@@ -11,6 +15,32 @@ class MyNumber extends StatefulWidget {
 }
 
 class _MyNumberState extends State<MyNumber> {
+
+  List<int> _response;
+  int _bonusNumber;
+  void test() async {
+    String url = 'https://www.nlotto.co.kr/common.do?method=getLottoNumber&drwNo=908';
+    var response = await http.get(url);
+
+    Map<String, dynamic> data = jsonDecode(response.body);
+    setState(() {
+      print(data);
+      _response = [data['drwtNo1'],data['drwtNo2'],data['drwtNo3'],data['drwtNo4'],data['drwtNo5'],data['drwtNo6']];
+      print(_response);
+      _bonusNumber = data['bnusNo'];
+    });
+
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    test();
+    print("A");
+    print(_response.toString());
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,6 +60,7 @@ class _MyNumberState extends State<MyNumber> {
     ));
   }
 }
+
 
 Widget getLottoNumberSet(lottoNumberList, bonusNumber) {
   return Row(
