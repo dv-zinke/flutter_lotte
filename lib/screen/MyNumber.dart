@@ -29,17 +29,12 @@ class _MyNumberState extends State<MyNumber> {
       print(_response);
       _bonusNumber = data['bnusNo'];
     });
-
   }
 
   @override
   void initState() {
-    super.initState();
-    test();
-    print("A");
     print(_response.toString());
   }
-
 
   @override
   Widget build(BuildContext context) {
