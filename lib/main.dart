@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lotte_flutter/screen/GamePage.dart';
 import 'package:lotte_flutter/screen/MyNumber.dart';
 
 void main() => runApp(MyApp());
@@ -42,7 +43,7 @@ class _MyAppState extends State<MyApp> {
               physics: NeverScrollableScrollPhysics(),
               children: <Widget>[
                 Container(
-                  child:Container(child: MyNumber()),
+                  child:Container(child: GamePage()),
                 ),
                 Container(
                   child: Center(child: Text('page2')),
