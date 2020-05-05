@@ -7,3 +7,11 @@ class CenterPage extends StatefulWidget {
     return null;
   }
 }
+
+class _CenterPageState extends State<CenterPage>{
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return null;
+  }
+}
