@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lotte_flutter/screen/CenterPage.dart';
 import 'package:lotte_flutter/screen/GamePage.dart';
 import 'package:lotte_flutter/screen/MyNumber.dart';
 
@@ -46,7 +47,7 @@ class _MyAppState extends State<MyApp> {
                   child:Container(child: GamePage()),
                 ),
                 Container(
-                  child: Center(child: Text('page2')),
+                  child: Center(child: CenterPage()),
                 ),
                 Container(
                   child: Container(child: MyNumber()),
