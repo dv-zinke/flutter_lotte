@@ -6,8 +6,6 @@ import 'package:lotte_flutter/widget/LottoNumber.dart';
 import 'package:lotte_flutter/widget/LottoNumberCombination.dart';
 import 'package:http/http.dart' as http;
 class MyNumber extends StatefulWidget {
-
-
   @override
   State<StatefulWidget> createState() {
     return _MyNumberState();
@@ -19,7 +17,7 @@ class _MyNumberState extends State<MyNumber> {
   List<int> _response;
   int _bonusNumber;
   void test() async {
-    String url = 'https://www.nlotto.co.kr/common.do?method=getLottoNumber&drwNo=908';
+    String url = 'https://www.nlotto.co.kr/common.do?method=getLottoNumber&drwNo=909';
     var response = await http.get(url);
 
     Map<String, dynamic> data = jsonDecode(response.body);
