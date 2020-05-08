@@ -12,6 +12,6 @@ class _CenterPageState extends State<CenterPage>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return Text("센터페이지");
+    return Text("센터페이지?");
   }
 }
