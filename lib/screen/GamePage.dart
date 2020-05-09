@@ -17,7 +17,8 @@ class _GamePageState extends State<GamePage> {
       icon: Icon(Icons.sort),
       onSelected: (value) {
         if(value == 0){
-          print("1");
+          //value 변경시 페이지 변경해야함
+          print("!");
         }
         else if(value == 1){
           print("2");
